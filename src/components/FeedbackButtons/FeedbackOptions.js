@@ -1,20 +1,12 @@
 import PropTypes from 'prop-types';
-import { FeedbackButtons, ButtonsWrapp } from './FeedbackOptions.styled';
+import { FeedbackButtons } from './FeedbackOptions.styled';
 
-const FeedbackOptions = ({ options, onKlick }) => {
-  return (
-    <ButtonsWrapp>
-      {options.map(key => (
-        <FeedbackButtons key={key} onClick={onKlick}>
-          {key}
-        </FeedbackButtons>
-      ))}
-    </ButtonsWrapp>
-  );
+const FeedbackOptions = ({ onKlick, option }) => {
+  return <FeedbackButtons onClick={onKlick}>{option}</FeedbackButtons>;
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.array.isRequired,
+  option: PropTypes.string.isRequired,
   onKlick: PropTypes.func,
 };
 

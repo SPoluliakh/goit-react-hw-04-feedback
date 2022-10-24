@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonsWrapp = styled.div`
-  display: flex;
-  gap: ${p => p.theme.space[3]}px;
-  justify-content: center;
-`;
+
 
 export const FeedbackButtons = styled.button`
   font-weight: ${p => p.theme.fontWeights.medium};
