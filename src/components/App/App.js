@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
-import Section from '../StatisticsSection';
+import Section from '../Section';
 import Statistics from '../Statistic';
-import FeedbackOptions from '../FeedbackButtons';
+import FeedbackOptions from '../FeedbackOptions';
 import { Box } from '../../Box';
 import { StatTitle, StatText, ButtonsWrapp } from './App.styled';
 
@@ -49,7 +49,16 @@ export const App = () => {
 
   const feedbackVariants = Object.keys(state);
   return (
-    <Box display="flex">
+    <Box
+      border="normal"
+      padding={3}
+      marginLeft="auto"
+      marginRight="auto"
+      marginTop={6}
+      display="flex"
+      flexDirection="column"
+      width="300px"
+    >
       <Section title="Plese leave feedback">
         <ButtonsWrapp>
           {feedbackVariants.map(variant => (
@@ -60,8 +69,9 @@ export const App = () => {
             />
           ))}
         </ButtonsWrapp>
-
-        <StatTitle>Statistics</StatTitle>
+      </Section>
+      <StatTitle>Statistics</StatTitle>
+      <Section>
         {countTotalFeedback() === 0 ? (
           <StatText>"There is no feedback"</StatText>
         ) : (

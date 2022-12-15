@@ -5,14 +5,7 @@ import { StatisticSectionTitle } from './Section.styled';
 
 const Section = ({ title, children }) => {
   return (
-    <Box
-      as="section"
-      padding={3}
-      marginLeft="auto"
-      marginRight="auto"
-      marginTop={6}
-      border="normal"
-    >
+    <Box as="section">
       <StatisticSectionTitle>{title}</StatisticSectionTitle>
       {children}
     </Box>
@@ -20,7 +13,7 @@ const Section = ({ title, children }) => {
 };
 
 Section.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.node,
 };
 

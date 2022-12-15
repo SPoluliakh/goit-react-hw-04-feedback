@@ -15,6 +15,7 @@ export const StatText = styled.h3`
   font-weight: ${p => p.theme.fontWeights.normal};
   font-size: ${p => p.theme.fontSizes.ml}px;
 `;
+
 export const ButtonsWrapp = styled.div`
   display: flex;
   gap: ${p => p.theme.space[3]}px;
