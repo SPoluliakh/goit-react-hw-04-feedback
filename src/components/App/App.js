@@ -3,7 +3,7 @@ import Section from '../Section';
 import Statistics from '../Statistic';
 import FeedbackOptions from '../FeedbackOptions';
 import { Box } from '../../Box';
-import { StatTitle, StatText, ButtonsWrapp } from './App.styled';
+import NoFeedbackTitle from 'components/NoFeedbackTitle/NoFeedbackTitle';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -30,7 +30,7 @@ export const App = () => {
   // Responsible for updating the state
   const leaveFeedbackByClick = evt => {
     const selectedButton = evt.currentTarget.innerText;
-    dispatcher({ type: selectedButton, payload: 1 });
+    dispatcher({ type: selectedButton });
   };
 
   // Responsible for counting feedbacks
@@ -60,20 +60,14 @@ export const App = () => {
       width="300px"
     >
       <Section title="Plese leave feedback">
-        <ButtonsWrapp>
-          {feedbackVariants.map(variant => (
-            <FeedbackOptions
-              key={variant}
-              option={variant}
-              onKlick={leaveFeedbackByClick}
-            />
-          ))}
-        </ButtonsWrapp>
+        <FeedbackOptions
+          onKlick={leaveFeedbackByClick}
+          feedbackVariants={feedbackVariants}
+        />
       </Section>
-      <StatTitle>Statistics</StatTitle>
-      <Section>
+      <Section title="Statistics">
         {countTotalFeedback() === 0 ? (
-          <StatText>"There is no feedback"</StatText>
+          <NoFeedbackTitle />
         ) : (
           <Statistics
             feedbackVariants={state}

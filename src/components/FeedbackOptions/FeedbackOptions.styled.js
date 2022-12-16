@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 export const FeedbackButtons = styled.button`
   font-weight: ${p => p.theme.fontWeights.medium};
   font-size: ${p => p.theme.fontSizes.m}px;
@@ -26,4 +24,11 @@ export const FeedbackButtons = styled.button`
   :hover {
     transform: scale(1.2);
   }
+`;
+
+export const ButtonsWrapp = styled.div`
+  display: flex;
+  gap: ${p => p.theme.space[3]}px;
+  justify-content: center;
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
